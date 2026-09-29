@@ -12,7 +12,7 @@ Scenic is designed around three layers:
 
 **Memory → Taste → Decision**
 
-- **Memory** — watch history, progress, ratings, favorites, watchlist, lists, rewatches and viewing context.
+- **Memory** — watch history, progress, ratings, favorites, watchlist, lists, rewatches, franchise/universe progress, watch orders and viewing context.
 - **Taste** — Entertainment DNA, genre/person/studio patterns, taste evolution and preference signals.
 - **Decision** — explainable recommendations, Smart Queue, Watch Next, Ask Scenic and context-aware planning.
 
@@ -68,6 +68,7 @@ See [Git workflow](docs/GIT_WORKFLOW.md).
 | [API design](docs/API.md) | Proposed contracts and error behavior |
 | [Decision engine](docs/DECISION_ENGINE.md) | Academic deterministic recommendation baseline |
 | [AI system handoff](docs/AI_SYSTEM_HANDOFF.md) | Full Scenic intelligence/AI roadmap |
+| [Franchise & universe tracking](docs/FRANCHISE_UNIVERSE_TRACKING.md) | Versioned universe hierarchy, watch orders, title relations, advanced status and progress rules |
 | [Git workflow](docs/GIT_WORKFLOW.md) | Branching, PRs, reviews and releases |
 | [Team workflow](docs/TEAM.md) | Roles, reviews and contribution evidence |
 | [Backlog](docs/BACKLOG.md) | Work items and dependencies |
