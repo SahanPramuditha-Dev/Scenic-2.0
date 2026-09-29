@@ -35,8 +35,15 @@ Legend:
 | Statistics | Year in Review / Wrapped | P1 | Derived from historical records |
 | Taste | Entertainment DNA | P1 | Explainable profile, not a black box score |
 | Taste | Taste evolution | P2 | Compare periods over time |
-| Collections | Franchise/universe progress | P1 | Example: Marvel progress |
-| Collections | Release vs chronological order | P1 | Collection policy must be visible |
+| Collections | Universe / continuity hierarchy | P1 | Generic universe → saga/era/chapter → phase/arc/franchise → title model; no Marvel/DC-specific tables |
+| Collections | Franchise/universe progress | P1 | Released eligible title progress derived from canonical user history |
+| Collections | Mixed-media progress breakdown | P1 | Show title, episode and estimated-runtime progress rather than an unexplained single percentage |
+| Collections | Release vs chronological vs curated order | P1 | Switching order changes next-item guidance, never watch history |
+| Collections | Optional/main-story inclusion | P1 | Main canon/required vs optional/spin-off policy must be visible |
+| Collections | Separate continuities | P1 | DCU/DCEU/Arrowverse-style roots remain independent unless intentionally grouped |
+| Collections | Related-media graph | P1 | Prequel, sequel, spin-off, same universe, reboot, alternate continuity, etc. |
+| Collections | Universe Hub / detail | P1 | Browse, progress, hierarchy, next item, remaining runtime, upcoming items |
+| Collections | Universe catch-up goals | P2 | Plan completion before an upcoming movie/season |
 | People | Actor/director/studio completion | P2 | Depends on metadata depth |
 | Recommendations | Deterministic ranking baseline | MVP | Eligible candidate filtering + weighted scoring |
 | Recommendations | Explainable reasons | MVP | Human-readable reason codes |
