@@ -22,7 +22,7 @@ Discover → Save → Watch → Track → Understand taste → Decide what is ne
 
 ## 4. Experience — 90 seconds
 
-Show Home, Discover/Search, Details, Library/Continue Watching, Statistics and Watch Next.
+Show Home, Discover/Search, Details, Library/Continue Watching, Statistics and Watch Next. If presenting product vision, also show the Universe/Franchise Hub and a progress/watch-order example.
 
 For a proposal, use clearly labeled mockups.
 For the final presentation, replace mockups with real application screenshots/demo.
@@ -37,7 +37,7 @@ Express calls a separate Python/FastAPI decision service. Explain why the API ow
 
 MVP: deterministic recommendation ranking with explanations.
 
-Product roadmap: Entertainment DNA, Smart Queue, Scenic Match, contextual Watch Next, Ask Scenic, spoiler intelligence and availability intelligence.
+Product roadmap: first-class franchise/universe tracking, Entertainment DNA, Smart Queue, Scenic Match, contextual Watch Next, Ask Scenic, spoiler intelligence and availability intelligence.
 
 Do not present future features as already implemented.
 
