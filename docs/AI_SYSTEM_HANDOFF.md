@@ -49,6 +49,23 @@ The AI bot, recommendation engine, Scenic Match, smart watchlist, semantic searc
 | Year in Review | Convert real yearly viewing data into a narrative |
 | Personalized Upcoming | Rank upcoming releases for the user |
 | Franchise Intelligence | Understand progress across universes/franchises |
+| Taste Evolution | Show how the user's preferences change over time |
+| Hidden Gem Detector | Find high-fit, lower-popularity content |
+| Comfort Zone Breaker | Recommend adjacent but meaningfully different content |
+| Smart Watch Planner | Build a time-bounded viewing plan, not just one recommendation |
+| Commitment Intelligence | Understand hours/episodes/seasons remaining before recommending |
+| Recommendation Refinement | Let users say shorter, lighter, stranger, more obscure, etc. |
+| Recommendation Memory | Remember prior recommendations, acceptance, skips, and repetition |
+| Confidence / Uncertainty | Expose confidence in rankings and data freshness |
+| Taste Correction | Let users correct Scenic's inferred assumptions |
+| Availability Intelligence | Combine personal taste/backlog with where content is available |
+| Subscription Intelligence | Analyze service coverage and optional user-entered cost/value |
+| Release / Urgency Intelligence | Use leaving-soon and new-season timing in ranking |
+| Social Compatibility | Compare taste profiles between two users |
+| Group Watch Planner | Recommend for a group and support voting/consensus |
+| Spoiler-Safe Group Intelligence | Respect the least-advanced group member's progress |
+| Goal-Aware Recommendations | Help finish a season, franchise, backlog, or viewing goal |
+| Smart Recommendation Modes | Safe pick, hidden gem, comfort-zone break, quick watch, surprise me |
 
 ---
 
@@ -614,6 +631,451 @@ This requires franchise metadata + user tracking, with AI providing interpretati
 
 ---
 
+
+# 20A. Taste Evolution
+
+Entertainment DNA is a current-state profile. **Taste Evolution** explains how that profile changes over time.
+
+Examples:
+
+- genre interest by year or semester
+- growing/declining interest in themes
+- runtime tolerance changes
+- changing language/country preferences
+- movie vs series vs anime shifts
+- director/actor affinity changes
+- completion/drop behavior changes
+- changes in preferred intensity, pacing, or complexity
+
+Example insight:
+
+> Your interest in psychological and mystery stories has increased over the last two years, while your completion rate for long fantasy series has fallen.
+
+The underlying statistics must come from Scenic data. AI may summarize the trend but must not invent it.
+
+---
+
+# 20B. Hidden Gem Detector
+
+Hidden Gems should be a **dedicated recommendation mode**, not just a Home row label.
+
+Goal:
+
+> Find titles that strongly match the user but are less likely to appear in mainstream popularity-first discovery.
+
+Possible factors:
+
+- high Scenic Match
+- strong metadata similarity
+- sufficient rating/review quality
+- lower popularity/exposure
+- not already watched
+- not repeatedly dismissed
+- diversity relative to recent viewing
+
+The implementation should avoid a single universal definition of "hidden gem." Popularity thresholds may vary by country, media type, age, and catalogue size.
+
+---
+
+# 20C. Comfort Zone Breaker / Exploration Mode
+
+This mode intentionally increases novelty while keeping a meaningful connection to the user's taste.
+
+Example:
+
+> A user who mostly watches Japanese psychological anime may be offered a Korean psychological thriller because the themes and tone match even though the medium/country differs.
+
+This requires a controllable **exploration vs familiarity** parameter.
+
+Possible modes:
+
+- Safe Pick
+- Familiar but New
+- Explore
+- Escape My Comfort Zone
+- Surprise Me
+
+The engine should never interpret exploration as permission to ignore explicit dislikes or hard constraints.
+
+---
+
+# 20D. Smart Watch Planner
+
+The Decision Engine normally returns a small set of next actions.
+
+The **Smart Watch Planner** can plan an entire viewing window.
+
+Examples:
+
+> "I have 45 minutes."
+
+Possible result:
+- 1 x 42-minute episode
+
+> "I have 3 hours tonight."
+
+Possible result:
+- finish 2 remaining episodes of an active mini-series
+- or one 110-minute movie + one 45-minute episode
+
+> "Plan my weekend."
+
+Possible result:
+- a realistic multi-title plan using total runtime, current progress, preferences, and release urgency
+
+Planner inputs may include:
+
+- total available time
+- breaks
+- current progress
+- episode runtimes
+- movie runtimes
+- whether starting new content is allowed
+- mood
+- company
+- user goals
+- priority titles
+- availability
+
+The planner should prefer realistic plans and avoid filling every available minute just because it can.
+
+---
+
+# 20E. Commitment Intelligence
+
+For series and anime, genre similarity alone is not enough.
+
+Scenic should understand:
+
+- episodes remaining
+- seasons remaining
+- estimated hours remaining
+- average episode runtime
+- whether the user is near a season finale
+- whether a new season is approaching
+- whether the title has been stalled
+- whether the series is ongoing or ended
+- whether the user usually completes similar commitments
+
+Examples:
+
+> 2 episodes / ~96 minutes remain in this season.
+
+> A new season starts in 18 days and you have 7 episodes left.
+
+> You usually drop series longer than five seasons, so this is a higher-commitment recommendation.
+
+Commitment signals should influence the Decision Engine, Smart Queue, Continue Watching, and Watch Planner.
+
+---
+
+# 20F. Recommendation Refinement, Memory and Confidence
+
+Recommendations should be interactive rather than one-shot.
+
+## Refinement controls
+
+A recommendation result should support actions such as:
+
+- shorter
+- longer
+- lighter
+- darker
+- funnier
+- more serious
+- more obscure
+- more familiar
+- less commitment
+- only from my watchlist
+- continue something
+- start something new
+- not tonight
+- not interested
+- never recommend this
+
+These controls should update the **current decision session** without accidentally rewriting the user's permanent taste unless the user explicitly chooses a persistent action.
+
+## Recommendation memory
+
+Scenic should remember:
+
+- what was recommended
+- when it was recommended
+- why it was recommended
+- which context was active
+- whether it was opened
+- saved
+- started
+- completed
+- skipped
+- rejected
+- marked not tonight
+- marked not interested
+
+This helps prevent repetitive recommendations and enables evaluation.
+
+## Confidence
+
+Where useful, return:
+
+- ranking confidence
+- reason strength
+- metadata completeness
+- availability freshness
+- cold-start / low-data status
+
+Do not show fake precision. A 94% Scenic Match should only be displayed if the product has a defined scoring interpretation.
+
+---
+
+# 20G. Taste Correction and "Why Scenic Thinks This"
+
+Entertainment DNA must be correctable.
+
+Users should be able to say:
+
+- "I don't actually like this genre."
+- "I watched these because my family chose them."
+- "Stop treating this actor as a preference."
+- "I like horror, just not tonight."
+- "This rating was for nostalgia, not because I want similar recommendations."
+
+A **Why Scenic thinks this** panel can show the evidence behind an inferred preference.
+
+Example:
+
+```text
+Scenic thinks you like psychological thrillers because:
+- 11 completed titles
+- 8.6 average rating
+- 3 rewatches
+- low drop rate
+```
+
+Corrections should become high-quality labels for the taste model.
+
+---
+
+# 20H. Availability, Subscription and Release Intelligence
+
+Availability should be more than a "Where to Watch" link.
+
+## Availability-aware decisioning
+
+Decision constraints may include:
+
+- only services the user has
+- subscription only
+- free options allowed
+- rental allowed
+- purchase allowed
+- country/region
+- currently available
+- leaving soon
+
+Availability data must include source/region/freshness when possible.
+
+## Watchlist coverage
+
+Examples:
+
+> 11 titles from your watchlist are currently on Service A.
+
+> 6 high-priority titles are available on Service B this month.
+
+## Subscription intelligence
+
+If the product later allows users to enter service costs, Scenic can estimate:
+
+- watched hours per service
+- completed titles per service
+- backlog coverage
+- unused-service warnings
+- possible pause suggestions
+- useful resubscribe windows
+
+This is a later intelligence feature, not an MVP requirement.
+
+## Release urgency
+
+Ranking may consider:
+
+- title leaving a service soon
+- new season approaching
+- finale approaching
+- followed movie release
+- watchlist title becoming available
+- long-stalled title
+- unfinished backlog before sequel/release
+
+---
+
+# 20I. Social Compatibility and Group Intelligence
+
+Group Recommendation is only one part of the social intelligence layer.
+
+## Two-user compatibility
+
+Scenic may calculate compatibility using:
+
+- shared watched titles
+- rating agreement
+- genre/theme overlap
+- director/actor/studio affinity
+- shared dislikes
+- completion patterns
+- language/runtime preferences
+
+A compatibility percentage should only be shown if the scoring method is documented.
+
+## Group Watch Planner
+
+For multiple users, the system may:
+
+1. build each person's candidate eligibility
+2. remove titles already watched by everyone when appropriate
+3. penalize strong dislikes
+4. calculate group-fit scores
+5. preserve fairness so one person's profile does not dominate
+6. return a shortlist
+7. optionally allow group voting
+
+## Spoiler-safe group progress
+
+When generating recaps, discussion helpers, or character explanations for a group, use the safest shared spoiler boundary—normally the least-advanced participating member unless the group explicitly chooses otherwise.
+
+---
+
+# 20J. Goal-Aware Intelligence
+
+AI can help users act on explicit goals.
+
+Examples:
+
+- finish a season this week
+- catch up before a new season
+- complete the MCU
+- reduce a stale watchlist
+- watch five films from a specific country
+- finish a mini-series over the weekend
+
+Goal-aware recommendations should use real progress and available time.
+
+Achievements and streaks are normal product/gamification features; the AI developer only needs them when they become an input to planning or personalized guidance.
+
+---
+
+# 20K. Search Intelligence Beyond Embeddings
+
+Semantic search is only one part of a strong search experience.
+
+The surrounding Scenic search system should support:
+
+- title aliases
+- translated/original titles
+- typo tolerance
+- prefix/fuzzy matching
+- actors/directors/people
+- studios
+- franchises/collections
+- recent searches
+- persistent filters
+- hide watched
+- hide dropped
+- language filters
+- runtime filters
+- never-show exclusions
+
+The Python AI service may parse natural-language constraints, but basic catalogue search quality belongs primarily to the main backend/search layer.
+
+---
+
+# 20L. Additional AI-Related Analytics
+
+The broader tracking system can provide useful signals to AI:
+
+- movie / series / season / episode counts
+- genre/theme/country/language/decade distributions
+- actor/director/studio filmography progress
+- rewatches
+- completion rate
+- drop rate
+- binge patterns
+- watching calendar / heatmap
+- backlog age
+- remaining runtime
+- franchise/phase/saga progress
+- recommendation acceptance history
+- exploration rate
+- group taste overlap
+- notes/tags where the user intentionally makes them available
+
+These are primarily structured analytics. AI should use or explain them rather than fabricate them.
+
+---
+
+# 20M. AI Product Metrics
+
+The team should evaluate AI by whether it reduces decision friction and improves useful outcomes.
+
+Suggested metrics:
+
+- **Decision success rate:** percentage of Tonight sessions ending in a selected/started title
+- **Time to decision:** median time from entering the decision flow to choosing
+- **Recommendation acceptance:** starts, saves, or positive feedback from ranked picks
+- **Repeat-recommendation rate:** how often already-rejected titles reappear incorrectly
+- **Queue health:** stale-backlog reduction and percentage of items with actionable priority
+- **Taste correction rate:** frequency of user corrections to inferred preferences
+- **Spoiler violation rate:** must be zero in validated cases
+- **Cold-start usefulness:** reviewer/user acceptance before enough behavioral history exists
+- **Recommendation diversity:** avoid collapsing to the same genres/titles
+- **AI cost per active user:** track model/embedding cost as the system grows
+
+Do not optimize only for time spent inside Scenic. A good decision product may succeed by helping the user leave the app quickly and start watching.
+
+---
+
+# 20N. Full AI Intent Catalogue for Ask Scenic
+
+The earlier intent list is only the MVP. The full bot may eventually support:
+
+```text
+WATCH_RECOMMENDATION
+WATCH_PLAN
+REFINE_RECOMMENDATION
+SURPRISE_ME
+FIND_TITLE
+SEMANTIC_DISCOVERY
+HISTORY_QUERY
+MEMORY_RECALL
+TASTE_QUERY
+TASTE_EVOLUTION_QUERY
+TASTE_CORRECTION
+WATCHLIST_QUERY
+SMART_QUEUE_QUERY
+CONTINUE_QUERY
+PROGRESS_QUERY
+REMAINING_TIME_QUERY
+FRANCHISE_QUERY
+FILMOGRAPHY_QUERY
+RELEASE_QUERY
+AVAILABILITY_QUERY
+SUBSCRIPTION_QUERY
+EXPLANATION_QUERY
+RECAP_QUERY
+CHARACTER_REMINDER
+LIST_GENERATION
+GROUP_RECOMMENDATION
+COMPATIBILITY_QUERY
+STATS_QUERY
+YEAR_REVIEW_QUERY
+GOAL_PLAN
+```
+
+Every intent should map to a validated Scenic capability. Unknown intents should not cause the LLM to invent unsupported actions.
+
+---
+
 # 21. Scenic Pages Related to AI
 
 ## Dedicated AI-first pages
@@ -655,6 +1117,26 @@ These should be treated as first-class AI product surfaces:
    - personalized sections
    - current-context prioritization
 
+6. **Taste Evolution**
+   - preference changes over time
+   - explainable trend summaries
+   - correction controls
+
+7. **Smart Watch Planner**
+   - plan 45 minutes / one evening / a weekend
+   - combine multiple episodes or titles
+   - consider current progress and commitments
+
+8. **Compatibility / Group Decision**
+   - two-user taste compatibility
+   - multi-user candidate ranking
+   - optional group voting
+
+9. **Availability Intelligence** *(later phase)*
+   - personalized provider coverage
+   - availability urgency
+   - optional subscription-value insights
+
 ## Other pages that consume AI
 
 | Scenic page | AI usage |
@@ -677,6 +1159,13 @@ These should be treated as first-class AI product surfaces:
 | Friends / Group Decision | Group recommendation |
 | Notifications | Personalized release/recommendation alerts |
 | Settings / AI Preferences | User corrections and recommendation controls |
+| Calendar | AI can prioritize releases and catch-up urgency |
+| Provider / Streaming Availability | Availability-aware ranking and coverage |
+| Taste Evolution | Historical preference changes |
+| Compatibility | Two-user taste comparison |
+| Group Planner | Group shortlist and consensus |
+| Goals | Goal-aware planning and catch-up recommendations |
+| People / Filmography | Personalized actor/director/studio progress queries |
 
 ---
 
@@ -900,7 +1389,14 @@ POST /ai/watchlist/rank
 POST /ai/continue-watching/rank
 POST /ai/explain
 POST /ai/group-recommendation
+POST /ai/compatibility
 POST /ai/lists/generate
+POST /ai/watch-plan
+POST /ai/recommendations/refine
+POST /ai/taste/correct
+POST /ai/taste/evolution
+POST /ai/availability/rank
+POST /ai/goals/plan
 ```
 
 Prefer service-to-service authentication.
@@ -1112,6 +1608,16 @@ Important test categories:
 - malformed LLM parse handled safely
 - missing profile/history handled gracefully
 - cold-start users receive sensible recommendations
+- repeated rejected recommendations are suppressed appropriately
+- recommendation-session refinements do not incorrectly alter permanent taste
+- taste corrections affect later recommendations
+- commitment estimates use correct remaining episode/runtime data
+- recommendation confidence is not emitted when unsupported
+- availability region/freshness is respected
+- group ranking does not allow one user to dominate unfairly
+- group spoiler boundary uses the least-advanced participant by default
+- hidden-gem mode preserves quality and taste fit while increasing novelty
+- comfort-zone mode increases exploration without violating hard dislikes
 
 ---
 
@@ -1206,5 +1712,7 @@ This document provides the complete AI handoff view. It should be read together 
 
 ---
 
-**Document status:** Scenic 2.0 AI architecture and feature handoff  
+**Document status:** Scenic 2.0 full AI architecture, feature inventory, and teammate handoff  
+**Deep audit:** reconciled against earlier CineTrack/Scenic plans, Scenic product research, and the current Scenic 2.0 repository.  
+**Scope note:** this document records the **full product intelligence vision**. It does not mean every item belongs in the academic MVP; use PROJECT.md / REQUIREMENTS.md / PLAN.md for committed delivery scope.  
 **Last updated:** 2026-09-29
