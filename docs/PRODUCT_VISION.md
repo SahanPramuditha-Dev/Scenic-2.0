@@ -26,6 +26,9 @@ Scenic should maintain a reliable record of:
 - ratings and recommendation feedback;
 - rewatches;
 - custom lists;
+- franchise/universe hierarchy and progress;
+- release/chronological/curated watch orders;
+- sequel/prequel/spin-off/same-universe relations;
 - viewing history and timestamps;
 - optional private notes;
 - stable provider/canonical IDs for import/export.
@@ -40,7 +43,7 @@ Examples:
 - genre affinity by movie/TV/anime;
 - preferred runtime/commitment;
 - actor/director/studio patterns;
-- franchise completion;
+- franchise, universe, saga/phase/chapter and continuity completion;
 - rating patterns;
 - comfort genres versus exploration;
 - taste evolution over time;
@@ -66,7 +69,8 @@ Decision features include:
 - release/availability urgency;
 - Smart Watch Planner;
 - Ask Scenic conversational discovery;
-- group/shared decision support as optional later scope.
+- group/shared decision support as optional later scope;
+- catch-up planning for a universe/franchise before a new release.
 
 A good decision response is short, ranked and explainable rather than an infinite wall of posters.
 
@@ -100,11 +104,15 @@ Build Scenic in layers:
 1. Foundation and identity.
 2. Reliable tracking and history.
 3. Library/watchlist and dashboard.
-4. Deterministic recommendation baseline.
-5. Entertainment DNA and richer statistics.
-6. Smart Queue and contextual decision intelligence.
-7. Spoiler/availability intelligence.
-8. Conversational and group features.
-9. Advanced ML only when data and evaluation justify it.
+4. Franchise/universe tracking foundation using the same canonical history, with at least one curated demonstration collection after core tracking is stable.
+5. Deterministic recommendation baseline.
+6. Entertainment DNA and richer statistics.
+7. Smart Queue and contextual decision intelligence.
+8. Spoiler/availability intelligence.
+9. Conversational and group features.
+10. Advanced ML only when data and evaluation justify it.
 
 The academic submission should prioritize a smaller system that is correct, demonstrable and testable over a large incomplete feature set.
+
+## Franchise/universe tracking principle
+Scenic must not equate a provider movie collection with a complete entertainment universe. The authoritative model is Scenic's own versioned hierarchy + relationship graph, documented in `FRANCHISE_UNIVERSE_TRACKING.md`. Separate continuities remain separate, upcoming items are not silently counted against released-only completion, and mixed-media percentages always state their denominator.
