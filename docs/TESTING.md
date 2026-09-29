@@ -9,6 +9,8 @@ No tests have been executed: application code does not yet exist.
 | Watchlist | Duplicate add, repeated delete, refresh persistence | Integration/E2E |
 | Movies | Mark twice, unmark, invalid series ID | Unit/integration |
 | Episodes | Specials, future air dates, unknown air dates, new aired episode | Unit/integration |
+| Franchise/universe | Multi-membership, released-only denominator, optional items, separate continuities, nested roll-up, order switching, mixed-media progress | Unit/integration |
+| Tracking state | Planning/watching/completed/paused/dropped/rewatching transitions preserve history | Unit/integration |
 | Dashboard | Multi-genre overlap, empty history, exact counts | Unit/integration |
 | Catalog | Missing image, provider timeout, malformed response, quota | Adapter integration |
 | Recommendations | Cold start, exclusion, tie order, missing signals, empty pool | Python unit/contract |
@@ -19,6 +21,7 @@ No tests have been executed: application code does not yet exist.
 ## Fixtures
 Use two users and synthetic titles: one movie with two genres, another with missing runtime, and a series containing regular aired, future and special episodes.
 Use fixed evaluation timestamps so progress tests remain deterministic.
+Add a synthetic mixed-media franchise fixture with at least two movies, one series, one optional title, one unreleased title, nested groups and two watch orders. Add separate-continuity fixtures to prove progress is not merged accidentally.
 Mock external providers in automated tests; use a separate bounded manual integration check.
 
 ## Release gates
