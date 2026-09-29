@@ -108,15 +108,21 @@ Statistics examples:
 
 ---
 
-## Slide 9 — Franchise intelligence
+## Slide 9 — Franchise & universe tracking
 
-Example: Marvel progress.
+Examples: Marvel, DC, Star Wars and anime franchises.
 
 Show:
-- collection completion percentage;
-- watched/unwatched entries;
-- release order;
-- chronological order.
+- hierarchy such as Universe → Saga/Chapter → Phase/Arc → Title;
+- separate continuities where required;
+- released titles completed vs upcoming items;
+- movie/series/anime breakdown;
+- episode progress for member series;
+- estimated remaining runtime;
+- release, chronological and curated watch orders;
+- the next unwatched item.
+
+Important: a mixed-media universe should not show an unexplained percentage. State whether progress is measured by released required titles, eligible episodes or estimated runtime.
 
 Make clear this is staged after core tracking unless already implemented.
 
@@ -237,7 +243,7 @@ Two columns.
 Auth, search/details, watchlist/library, movie completion, episode progress, Continue Watching, dashboard, deterministic recommendations, tests.
 
 **Product vision**
-DNA, Smart Queue, franchise progress, Wrapped, availability intelligence, Ask Scenic, spoiler-safe intelligence, group decisions.
+DNA, Smart Queue, first-class franchise/universe tracking and watch orders, Wrapped, availability intelligence, Ask Scenic, spoiler-safe intelligence, group decisions.
 
 Message: we protect the vision without over-scoping the first release.
 
