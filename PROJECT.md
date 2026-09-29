@@ -44,7 +44,7 @@ The broader Scenic vision includes:
 - ratings, favorites, private notes and custom lists;
 - Entertainment DNA and taste evolution;
 - statistics, heatmaps and Year in Review;
-- franchise/universe progress such as Marvel;
+- first-class franchise/universe progress such as Marvel, DC, Star Wars and anime franchises, with separate continuities, sagas/phases/chapters, watch orders and released-vs-upcoming progress;
 - upcoming releases, calendar, notifications and availability intelligence;
 - explainable recommendations and Scenic Match;
 - Ask Scenic conversational discovery;
@@ -63,7 +63,7 @@ Anime is part of the product scope. Initial metadata may come through the primar
 
 ## After core acceptance
 
-Ratings and recommendation feedback; custom lists; franchise progress; richer statistics; Entertainment DNA; Year in Review; upcoming/calendar; Smart Queue; import/export; availability intelligence; richer AI experiences.
+Ratings and recommendation feedback; custom lists; first-class franchise/universe tracking; multiple watch orders and related-media relations; richer tracking states/rewatches; richer statistics; Entertainment DNA; Year in Review; upcoming/calendar; Smart Queue; import/export; availability intelligence; richer AI experiences.
 
 ## Initially excluded
 
@@ -89,3 +89,6 @@ Confirm exact runtime versions and external providers before scaffolding.
 Core acceptance criteria take priority over optional features. Record scope/architecture changes in docs/DECISIONS.md with reason, impact and owner.
 
 A feature is complete only when implemented, reviewed, tested, integrated and documented.
+
+## Tracking architecture reference
+The full franchise/universe and advanced tracking model is specified in `docs/FRANCHISE_UNIVERSE_TRACKING.md`. Provider collections are treated as metadata inputs; Scenic owns the versioned hierarchy, relations, watch-order policy and derived personal progress.
