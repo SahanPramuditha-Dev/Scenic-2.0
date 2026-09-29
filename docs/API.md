@@ -23,6 +23,18 @@ All personal endpoints derive user identity from the authenticated session.
 | GET | /me/progress/:titleId | Eligible/watched counts and completion |
 | GET | /me/dashboard | Defined aggregate statistics |
 | GET | /me/recommendations?limit=10 | Ranked candidates with reasons |
+| GET | /collections | Browse curated franchise/universe collections |
+| GET | /collections/:id | Collection identity, policy and summary |
+| GET | /collections/:id/tree | Nested saga/phase/chapter/franchise structure |
+| GET | /collections/:id/orders | Available release/chronological/curated watch orders |
+| GET | /collections/:id/orders/:orderId | Ordered trackable items |
+| GET | /titles/:id/collections | Universe/franchise memberships for a title |
+| GET | /titles/:id/relations | Sequel/prequel/spin-off/same-universe/etc. relationships |
+| GET | /me/collections/:id/progress | Personal released-title/episode/runtime progress under stated policy |
+| GET | /me/collections/:id/next | Next eligible item in selected watch order |
+| PUT | /me/collections/:id/preferences | Select watch order/inclusion preferences without changing history |
+| GET | /me/titles/:titleId/state | Personal planning/watching/completed/paused/dropped/rewatching state |
+| PUT | /me/titles/:titleId/state | Update personal tracking state |
 
 ## Common rules
 - List response: { "items": [], "page": 1, "pageSize": 20, "total": 0 }. Where provider totals are unavailable, use an explicitly documented hasNextPage contract instead.
@@ -33,6 +45,10 @@ All personal endpoints derive user identity from the authenticated session.
 - Watched PUT may accept watchedAt; validate format and policy. Omitting it uses server time. Repeated PUT preserves the original completion timestamp unless explicitly changed.
 - Single-item PUT/DELETE operations are idempotent. Implement bulk season marking later as a transaction with explicit episode eligibility.
 - Provider search results must resolve to stable internal title IDs before personal mutations.
+- Collection progress responses must include the collection version and denominator policy.
+- Unreleased items should be returned separately from released-only progress by default.
+- A watch-order preference changes navigation/next-item behavior only; it must not rewrite watch history.
+- Collection membership, canon/continuity labels and title relations come from Scenic's normalized/curated graph, not blindly from a provider collection endpoint.
 
 ## Private decision contract
 POST /recommend with schemaVersion, candidate title metadata, aggregate genre preferences, excluded IDs and limit.
