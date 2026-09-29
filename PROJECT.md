@@ -1,37 +1,91 @@
 # Project charter — Scenic 2.0
 
+## Product statement
+
+Scenic 2.0 is a movie, TV-series and anime tracking + entertainment-intelligence platform.
+
+Its long-term model is:
+
+**Memory → Taste → Decision**
+
+Scenic remembers viewing activity, turns those signals into an understandable taste profile, and helps the user make the next viewing decision. Scenic does **not** host or stream video.
+
 ## Problem
-People keep fragmented watchlists, lose track of series progress, and spend time choosing a movie despite having many options. Scenic brings discovery, tracking, and a short, explainable recommendation list into one application.
 
-## Users and value
-Primary users are individual movie and series viewers. A viewer should be able to find a title, save it, record progress, and understand why another title is suggested.
+Viewers often keep fragmented watchlists, forget where they stopped in a series, lose track of completed seasons, and still spend too long deciding what to watch. Existing lists also tend to behave like static poster walls instead of using personal history and context.
 
-## Objectives and measurable acceptance
-1. A new user can register, sign in, search, save a title, and mark it watched in a complete demonstration.
-2. A series viewer can record episodes and see accurate season and series progress after refreshing.
-3. A dashboard agrees with known seeded viewing records.
-4. A user receives up to ten eligible recommendations with understandable reasons.
+## Primary users
+
+Individual viewers who watch movies, TV series and/or anime and want one place to:
+- discover titles;
+- track viewing progress;
+- organize watchlists and lists;
+- understand viewing patterns;
+- receive explainable recommendations;
+- decide what fits their current time, mood and commitment.
+
+## Academic MVP objectives
+
+1. A new user can register, sign in, search, save a title and mark it watched in one complete demonstration.
+2. A series viewer can record episode progress and see correct season/series progress after refresh.
+3. Dashboard statistics agree with known seeded viewing records.
+4. A user receives a bounded recommendation list with understandable reasons.
 5. User A cannot read or modify User B's private records.
-6. Core tracking remains usable when the decision service is unavailable.
+6. Core tracking remains usable if the Python decision service is unavailable.
+7. The project can be installed and demonstrated reproducibly by another team member.
 
-## Scope
-**Core release:** authentication; metadata search/details; watchlist; movie completion; episode progress; dashboard; baseline recommendations; responsive accessible interfaces; reproducible setup; tests and deployment documentation.
+## Full product direction
 
-**After core acceptance:** curated Marvel/other franchise collections, ratings and recommendation feedback, data export, richer filters.
+The broader Scenic vision includes:
+- movies, TV and anime discovery;
+- Library statuses such as Watching, Completed, Plan to Watch, Paused and Dropped;
+- Continue Watching and Up Next;
+- Watchlist and Smart Queue;
+- ratings, favorites, private notes and custom lists;
+- Entertainment DNA and taste evolution;
+- statistics, heatmaps and Year in Review;
+- franchise/universe progress such as Marvel;
+- upcoming releases, calendar, notifications and availability intelligence;
+- explainable recommendations and Scenic Match;
+- Ask Scenic conversational discovery;
+- Smart Watch Planner using time, mood, company and commitment;
+- progress-aware spoiler protection and safe recaps;
+- import/export and deduplication;
+- optional small-group decision features.
 
-**Excluded initially:** video streaming, piracy links, payments, social feeds/chat, advanced collaborative ML, native mobile clients, automatic streaming-provider availability, offline synchronization.
+These are staged. The MVP should not be delayed by implementing every future feature.
+
+## Core release scope
+
+Authentication; metadata search/details; personal library/watchlist; movie completion; episode progress; Continue Watching; dashboard; deterministic recommendation baseline; responsive accessible UI; reproducible setup; tests and delivery documentation.
+
+Anime is part of the product scope. Initial metadata may come through the primary movie/TV provider; a dedicated anime provider adapter can be added later if required.
+
+## After core acceptance
+
+Ratings and recommendation feedback; custom lists; franchise progress; richer statistics; Entertainment DNA; Year in Review; upcoming/calendar; Smart Queue; import/export; availability intelligence; richer AI experiences.
+
+## Initially excluded
+
+Video streaming/CDN functionality; piracy links; payments; unrestricted public social feed/chat; advanced collaborative ML without data/evaluation; native mobile clients; offline synchronization; claims of AI accuracy without measured evidence.
 
 ## Deliverables
-Source code; reviewed requirements; architecture and schema; API contracts; test evidence; working deployment if budget permits; reproducible local demo; group contribution log; presentation and demonstration.
 
-## Proposed technical baseline
-React/TypeScript frontend, Node.js/TypeScript/Express API, Prisma/PostgreSQL persistence, Python/FastAPI recommendation service. These reflect the initial project direction; confirm with the lecturer and group before scaffolding.
+Source code; requirements; architecture; schema; API contracts; UI/page map; test evidence; reproducible local demo; deployment when feasible; group contribution evidence; project presentation; decision log.
 
-## Assumptions needing confirmation
-- An eight-week plan is an estimate; academic deadline is unknown.
-- Team roles may be combined or shared depending on group size.
-- Metadata provider, authentication approach, runtime versions, hosting and budget are undecided.
-- No application code or test results exist in this repository at initialization.
+## Technical baseline
 
-## Success and change control
-Core acceptance criteria take priority over optional features. Record scope changes in docs/DECISIONS.md with impact on effort, dependencies and delivery. A feature is complete only when implemented, reviewed, tested and documented.
+- Frontend: React + TypeScript
+- Main API: Node.js + TypeScript + Express
+- ORM/database: Prisma + PostgreSQL
+- Decision/AI service: Python + FastAPI
+- External metadata: provider adapters, initially TMDB-oriented
+- Optional later anime metadata adapter: AniList or another evaluated provider
+
+Confirm exact runtime versions and external providers before scaffolding.
+
+## Change control
+
+Core acceptance criteria take priority over optional features. Record scope/architecture changes in docs/DECISIONS.md with reason, impact and owner.
+
+A feature is complete only when implemented, reviewed, tested, integrated and documented.

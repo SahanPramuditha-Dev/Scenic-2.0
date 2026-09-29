@@ -1,46 +1,68 @@
 # Scenic 2.0 presentation outline
 
-Markdown source for a group proposal or final presentation; no PowerPoint file is included.
+This is the compact speaking outline. The detailed slide source is in ../presentations/SCENIC_2_PROJECT_DECK.md.
 
-## 1. The problem — 45 seconds
-People save titles in different places, lose track of episodes and still struggle to choose what to watch.
-Speaker cue: describe one realistic viewer journey without claiming survey results.
+## 1. Problem — 45 seconds
 
-## 2. The product — 45 seconds
-Scenic combines discovery, a personal watchlist, viewing progress and explainable suggestions.
-Show the core journey: discover → save → watch → track → choose next.
+People use fragmented watchlists, forget episode progress and still struggle to decide what to watch.
 
-## 3. Scope — 45 seconds
-Explain the core release and why collections, ratings and advanced ML are optional.
-State clearly that Scenic does not stream video.
+## 2. Scenic — 45 seconds
+
+Scenic is a movie, TV and anime tracking + entertainment-intelligence platform.
+
+Core idea:
+
+**Memory → Taste → Decision**
+
+It does not stream video.
+
+## 3. Core user journey — 60 seconds
+
+Discover → Save → Watch → Track → Understand taste → Decide what is next.
 
 ## 4. Experience — 90 seconds
-Proposal: show reviewed wireframes.
-Final: demonstrate searching, saving, marking watched and episode progress using synthetic data.
+
+Show Home, Discover/Search, Details, Library/Continue Watching, Statistics and Watch Next.
+
+For a proposal, use clearly labeled mockups.
+For the final presentation, replace mockups with real application screenshots/demo.
 
 ## 5. Architecture — 60 seconds
-Use the diagram in ARCHITECTURE.md. Explain why the API owns data/security while Python handles ranking.
 
-## 6. Decision engine — 60 seconds
-Explain inputs, eligibility filters, scoring and reasons with a small synthetic example.
-Do not call the baseline a trained AI model or claim measured accuracy without evidence.
+React/TypeScript → Express/TypeScript → PostgreSQL/Prisma.
 
-## 7. Team and delivery — 45 seconds
-Present actual member names, responsibilities, milestones and collaboration evidence.
-Replace placeholders before presenting.
+Express calls a separate Python/FastAPI decision service. Explain why the API owns authentication/data and Python owns ranking/intelligence.
 
-## 8. Quality and result — 60 seconds
-Proposal: explain planned tests and risks.
-Final: show actual test evidence, delivered requirements and limitations.
+## 6. Intelligence — 60 seconds
 
-## 9. Next steps — 30 seconds
-Proposal: approve scope and start the first complete flow.
-Final: explain realistic extensions based on observed limitations.
+MVP: deterministic recommendation ranking with explanations.
+
+Product roadmap: Entertainment DNA, Smart Queue, Scenic Match, contextual Watch Next, Ask Scenic, spoiler intelligence and availability intelligence.
+
+Do not present future features as already implemented.
+
+## 7. Group workflow — 45 seconds
+
+main = stable release.
+develop = integration.
+Short-lived feature branches + PR reviews + issue-linked evidence.
+
+Show actual member responsibilities and contribution links.
+
+## 8. Quality — 60 seconds
+
+Authorization, idempotent tracking, statistics correctness, responsive states, tests, provider failure handling and decision-service fallback.
+
+## 9. Roadmap/result — 45 seconds
+
+Proposal: show milestones and the first vertical slice.
+Final: show requirements delivered, test evidence, limitations and realistic next steps.
 
 ## Preparation checklist
-- Confirm allotted time and slide requirements with the lecturer.
-- Assign speakers after the roster is known.
-- Use actual UI screenshots only after implementation.
-- Rehearse the demo and prepare a permitted backup.
-- Replace proposed claims with observed results for the final presentation.
-- Be ready to explain ownership enforcement, progress calculation, cold start and individual contributions.
+
+- Confirm time/slide limit and assessment rubric.
+- Replace TBD team information.
+- Use actual screenshots only when implemented.
+- Rehearse a fresh-machine demo.
+- Prepare synthetic demo data.
+- Never claim measured recommendation accuracy without evidence.
