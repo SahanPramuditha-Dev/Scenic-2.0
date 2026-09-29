@@ -1,5 +1,7 @@
 # Decision engine plan
 
+> **Scope:** This file defines the deterministic recommendation baseline for the academic MVP. For the **full product AI vision**—Ask Scenic, Entertainment DNA/Memory, Scenic Match, Smart Queue, Taste Evolution, planning, semantic discovery, spoiler intelligence, availability intelligence, group recommendation and future ML—see [`AI_SYSTEM_HANDOFF.md`](AI_SYSTEM_HANDOFF.md).
+
 ## MVP approach
 Start with a deterministic content-based ranking baseline. A trained ML system requires data and evaluation that the initial project may not have.
 
