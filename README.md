@@ -26,18 +26,20 @@ The API communicates with a separate Python/FastAPI decision service. External m
 
 ## Repository workflow
 
-- 'main' — stable, demonstrable release branch.
-- 'develop' — integration branch for reviewed team work.
-- Short-lived branches are created from 'develop', for example:
-  - 'feature/frontend-foundation'
-  - 'feature/backend-foundation'
-  - 'feature/ai-service-foundation'
-  - 'feature/library-tracking'
-  - 'fix/progress-calculation'
-  - 'docs/project-presentation'
-  - 'test/qa-foundation'
+- `main` — stable, demonstrable release branch.
+- `develop` — integration branch for reviewed team work.
+- Initial workstream branches:
+  - `feature/frontend-foundation`
+  - `feature/backend-foundation`
+  - `feature/ai-service-foundation`
+  - `feature/tracking-core`
+  - `feature/franchise-universe-tracking`
+  - `test/qa-foundation`
+  - `chore/ci-cd-foundation`
+  - `docs/project-presentation`
+- Normal feature work should move to short-lived issue-specific branches from `develop`, such as `feature/episode-progress` or `fix/progress-calculation`.
 
-See [Git workflow](docs/GIT_WORKFLOW.md).
+See [Git workflow](docs/GIT_WORKFLOW.md) and [Group execution plan](docs/GROUP_EXECUTION_PLAN.md).
 
 ## Start here
 
@@ -45,12 +47,15 @@ See [Git workflow](docs/GIT_WORKFLOW.md).
 2. Read [Product vision](docs/PRODUCT_VISION.md) so the team understands Scenic beyond the MVP.
 3. Review the complete [Feature matrix](docs/FEATURE_MATRIX.md).
 4. Review [UI pages and routes](docs/UI_ROUTES.md).
-5. Agree on team ownership in [Team workflow](docs/TEAM.md).
-6. Follow [Delivery plan](PLAN.md) and [Backlog](docs/BACKLOG.md).
-7. Confirm [Architecture](docs/ARCHITECTURE.md), [Data model](docs/DATA_MODEL.md) and [API design](docs/API.md).
-8. Scaffold using [Project structure](docs/PROJECT_STRUCTURE.md) and [Setup](docs/SETUP.md).
-9. Follow [Contributing](CONTRIBUTING.md) and [Git workflow](docs/GIT_WORKFLOW.md) for every change.
-10. Use the [Presentation deck source](presentations/SCENIC_2_PROJECT_DECK.md) for proposal/final presentation work.
+5. Read [Group execution plan](docs/GROUP_EXECUTION_PLAN.md).
+6. Complete [Team onboarding](docs/TEAM_ONBOARDING.md) and agree ownership in [Team workflow](docs/TEAM.md).
+7. Follow [Delivery plan](PLAN.md) and [Backlog](docs/BACKLOG.md).
+8. Confirm [Architecture](docs/ARCHITECTURE.md), [Data model](docs/DATA_MODEL.md) and [API design](docs/API.md).
+9. Scaffold using [Project structure](docs/PROJECT_STRUCTURE.md), [Setup](docs/SETUP.md) and [Environment strategy](docs/ENVIRONMENT_STRATEGY.md).
+10. Follow [Contributing](CONTRIBUTING.md) and [Git workflow](docs/GIT_WORKFLOW.md) for every change.
+11. Review the [Risk register](docs/RISK_REGISTER.md) during weekly integration.
+12. Use [Release/demo checklist](docs/RELEASE_DEMO_CHECKLIST.md) before milestone releases.
+13. Use the [Project deck](presentations/SCENIC_2_PROJECT_DECK.md) for proposal/final work and [Group kickoff deck](presentations/SCENIC_2_GROUP_KICKOFF.md) for team alignment.
 
 ## Documentation map
 
@@ -58,6 +63,8 @@ See [Git workflow](docs/GIT_WORKFLOW.md).
 |---|---|
 | [PROJECT.md](PROJECT.md) | Project charter, scope, objectives and success criteria |
 | [PLAN.md](PLAN.md) | Eight-week proposed implementation sequence |
+| [Group execution plan](docs/GROUP_EXECUTION_PLAN.md) | Workstreams, vertical slices, sprint checkpoints and handoffs |
+| [Team onboarding](docs/TEAM_ONBOARDING.md) | New-member setup and working checklist |
 | [Product vision](docs/PRODUCT_VISION.md) | Full Scenic product direction and guiding principles |
 | [Feature matrix](docs/FEATURE_MATRIX.md) | Full feature catalogue with delivery phases |
 | [UI routes](docs/UI_ROUTES.md) | Pages, routes, states and ownership boundaries |
@@ -69,14 +76,18 @@ See [Git workflow](docs/GIT_WORKFLOW.md).
 | [Decision engine](docs/DECISION_ENGINE.md) | Academic deterministic recommendation baseline |
 | [AI system handoff](docs/AI_SYSTEM_HANDOFF.md) | Full Scenic intelligence/AI roadmap |
 | [Franchise & universe tracking](docs/FRANCHISE_UNIVERSE_TRACKING.md) | Versioned universe hierarchy, watch orders, title relations, advanced status and progress rules |
+| [Environment strategy](docs/ENVIRONMENT_STRATEGY.md) | Local/test/demo environments, data, migrations and provider behavior |
+| [Risk register](docs/RISK_REGISTER.md) | Delivery, technical and integration risks with mitigations |
 | [Git workflow](docs/GIT_WORKFLOW.md) | Branching, PRs, reviews and releases |
 | [Team workflow](docs/TEAM.md) | Roles, reviews and contribution evidence |
 | [Backlog](docs/BACKLOG.md) | Work items and dependencies |
 | [Testing](docs/TESTING.md) | Test matrix and release gates |
 | [Delivery](docs/DELIVERY.md) | Deployment, rollback and demo expectations |
+| [Release/demo checklist](docs/RELEASE_DEMO_CHECKLIST.md) | Final release gate and rehearsal sequence |
 | [Decisions](docs/DECISIONS.md) | Architecture and scope decision log |
 | [Presentation outline](docs/PRESENTATION.md) | Short speaking outline |
-| [Project deck](presentations/SCENIC_2_PROJECT_DECK.md) | Detailed slide-by-slide presentation source |
+| [Project deck](presentations/SCENIC_2_PROJECT_DECK.md) | Detailed slide-by-slide proposal/final presentation source |
+| [Group kickoff deck](presentations/SCENIC_2_GROUP_KICKOFF.md) | Concise team kickoff presentation |
 | [Security](SECURITY.md) | Credentials and vulnerability handling |
 
 ## Status
