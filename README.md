@@ -35,7 +35,8 @@ The Express API calls a separate Python/FastAPI decision service. The browser ne
 | [Architecture](docs/ARCHITECTURE.md) | Service boundaries and failure handling |
 | [Data model](docs/DATA_MODEL.md) | Entities, constraints, statistics definitions |
 | [API design](docs/API.md) | Proposed contracts and error behavior |
-| [Decision engine](docs/DECISION_ENGINE.md) | Baseline algorithm and evaluation |
+| [Decision engine](docs/DECISION_ENGINE.md) | Academic MVP baseline algorithm and evaluation |
+| [AI system handoff](docs/AI_SYSTEM_HANDOFF.md) | Full Scenic intelligence vision, AI features, pages, service ownership and roadmap |
 | [Setup](docs/SETUP.md) | Scaffolding and onboarding steps |
 | [Team workflow](docs/TEAM.md) | Ownership, review, meetings, contribution evidence |
 | [Backlog](docs/BACKLOG.md) | Tasks, dependencies, completion criteria |
