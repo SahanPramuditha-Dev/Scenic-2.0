@@ -45,6 +45,7 @@ This is the shared page map for frontend, backend and AI integration planning. E
 
 A detail page should support:
 - metadata and provider attribution;
+- franchise/universe memberships and related-media relations;
 - watchlist status;
 - watched/progress controls;
 - rating/favorite controls when enabled;
@@ -60,8 +61,10 @@ A detail page should support:
 | '/ask' | Ask Scenic | Conversational entertainment assistant | P2 |
 | '/recommendations' | Recommendations | Personalized recommendation feed with reasons | MVP/P1 |
 | '/planner' | Smart Watch Planner | Fit backlog to time/commitment/goals | P2 |
-| '/franchises' | Franchise progress | Marvel/other universe completion | P1 |
-| '/franchises/:id' | Franchise detail | Release/chronological order and progress | P1 |
+| '/franchises' | Universe / Franchise Hub | Browse Marvel, DC, Star Wars, anime and other trackable collections; in-progress/nearly-complete filters | P1 |
+| '/franchises/:id' | Universe / Franchise detail | Hierarchy, released progress, upcoming count, selected watch order, next item, remaining commitment | P1 |
+| '/franchises/:id/order/:orderId' | Watch Order | Release/chronological/curated sequence with per-item progress | P1 |
+| '/franchises/:id/group/:groupId' | Saga / Phase / Chapter detail | Nested progress for a child grouping | P1 |
 | '/availability' | Availability | Services/region intelligence | P2 |
 | '/group' | Group decision | Small-circle shared picks | P2 |
 
@@ -96,3 +99,16 @@ Frontend teams may mock responses only from documented contracts. When a page de
 ## AI boundary
 
 Ask Scenic and Decision pages must not invent private user state. AI features receive explicit, server-authorized context from Scenic APIs. See AI_SYSTEM_HANDOFF.md.
+
+
+## Franchise/universe UI rules
+
+- Show released progress separately from announced/upcoming titles.
+- State the completion policy/denominator next to every percentage.
+- Keep separate continuities visually distinct.
+- Support release, chronological and curated order without modifying watch history.
+- For mixed movie/series/anime collections, show title, episode and estimated-runtime breakdowns.
+- Surface "next unwatched item", "remaining runtime", optional/spin-off labels and child saga/phase/chapter progress.
+- Universe pages consume backend-authoritative collection data; AI may explain or plan over it but must not invent canon/membership.
+
+See `FRANCHISE_UNIVERSE_TRACKING.md`.
