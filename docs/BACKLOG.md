@@ -21,9 +21,13 @@ All items are unstarted. Convert these rows to GitHub issues during kickoff; ass
 | B15 | P0 | Complete security and integration testing | B06–B14 | Test report with no unresolved critical defects |
 | B16 | P0 | Deploy or package reproducible demo | B15 | Health, migration and rollback evidence |
 | B17 | P0 | Final report and presentation | B16 | Rehearsal and contribution record |
-| B18 | P1 | Curated franchise progress | B10, B11 | Explicit membership/order and tested progress |
+| B18 | P1 | Build franchise/universe tracking domain | B10, B11 | Versioned hierarchy, memberships, released-only progress and at least one mixed-media demonstration collection |
 | B19 | P1 | Ratings and recommendation feedback | B13 | Validated per-user feedback |
 | B20 | P1 | Export own tracking data | B15 | Ownership and format tests |
+| B21 | P1 | Add advanced tracking states and rewatch-ready model | B09, B10 | Planning/watching/completed/paused/dropped/rewatching states preserve history |
+| B22 | P1 | Add watch orders and related-media graph | B18 | Release/chronological order switch works; sequel/prequel/spin-off/continuity relations tested |
+| B23 | P1 | Build Universe Hub/detail/progress UI | B03, B18, B22 | Hierarchy, next item, upcoming count, denominator policy and mixed-media breakdown visible |
+| B24 | P1 | Integrate franchise progress with recommendations/Ask Scenic | B13, B18 | AI consumes backend-authoritative progress and never invents collection membership |
 
 ## Status updates
 Maintain status, issue link and owner here or replace this table with links to the authoritative GitHub board. Do not maintain conflicting status copies.
