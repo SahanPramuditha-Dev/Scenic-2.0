@@ -609,6 +609,10 @@ The backend provides the facts. The AI explains and presents them.
 
 # 20. Franchise / Universe Intelligence
 
+Franchise/universe tracking is **authoritative backend tracking data first, AI intelligence second**. The Python teammate should consume the hierarchy and progress computed by the main Scenic backend rather than inventing canon, membership or completion.
+
+The full tracking architecture is defined in `FRANCHISE_UNIVERSE_TRACKING.md`. It supports hierarchy (universe/continuity/saga/phase/chapter/franchise), multiple watch orders, title relations, mixed movie/series/anime progress, released-vs-upcoming rules and separate continuities.
+
 Scenic should understand structured collections such as:
 
 - Marvel Cinematic Universe
@@ -1703,6 +1707,7 @@ If an AI feature does not improve at least one of these three concepts, question
 This document provides the complete AI handoff view. It should be read together with:
 
 - `docs/DECISION_ENGINE.md`
+- `docs/FRANCHISE_UNIVERSE_TRACKING.md`
 - `docs/ARCHITECTURE.md`
 - `docs/API.md`
 - `docs/DATA_MODEL.md`
