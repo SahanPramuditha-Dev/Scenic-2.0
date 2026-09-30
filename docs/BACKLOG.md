@@ -28,6 +28,13 @@ All items are unstarted. Convert these rows to GitHub issues during kickoff; ass
 | B22 | P1 | Add watch orders and related-media graph | B18 | Release/chronological order switch works; sequel/prequel/spin-off/continuity relations tested |
 | B23 | P1 | Build Universe Hub/detail/progress UI | B03, B18, B22 | Hierarchy, next item, upcoming count, denominator policy and mixed-media breakdown visible |
 | B24 | P1 | Integrate franchise progress with recommendations/Ask Scenic | B13, B18 | AI consumes backend-authoritative progress and never invents collection membership |
+| B25 | P1 | Add Session Context + available-time decision inputs | B13, B19 | 40-minute fixtures satisfy time/context constraints with explainable reasons |
+| B26 | P1 | Add remaining-runtime-aware ranking | B10, B25 | In-progress titles rank by reliable remaining commitment, not only full runtime |
+| B27 | P1 | Add Watch Modes and contextual Taste Profiles | B25 | Bedtime/Break/Weekend/Family/Friends presets affect ranking without corrupting default taste |
+| B28 | P1 | Add Why Now/Why Later + Smart Queue lanes | B25, B26 | Recommendations and deferrals explain current fit; queue exposes actionable lanes |
+| B29 | P1 | Add temporary-vs-permanent feedback semantics and post-watch micro-feedback | B19, B25 | `not tonight` expires/session-scopes while explicit dislike/never-recommend persists |
+| B30 | P2 | Add Recommendation Sandbox and recommendation history | B25, B29 | Shorter/darker/newer/etc. rerank same session; prior suggestions can be recalled |
+| B31 | P2 | Add story dependencies and release-driven catch-up planning | B18, B22, B24 | Curated Required/Helpful/Optional data drives a spoiler-safe plan toward a target release |
 
 ## Status updates
 Maintain status, issue link and owner here or replace this table with links to the authoritative GitHub board. Do not maintain conflicting status copies.
