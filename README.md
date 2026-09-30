@@ -52,11 +52,12 @@ See [Git workflow](docs/GIT_WORKFLOW.md) and [Group execution plan](docs/GROUP_E
 6. Complete [Team onboarding](docs/TEAM_ONBOARDING.md) and agree ownership in [Team workflow](docs/TEAM.md).
 7. Follow [Delivery plan](PLAN.md) and [Backlog](docs/BACKLOG.md).
 8. Confirm [Architecture](docs/ARCHITECTURE.md), [Data model](docs/DATA_MODEL.md) and [API design](docs/API.md).
-9. Scaffold using [Project structure](docs/PROJECT_STRUCTURE.md), [Setup](docs/SETUP.md) and [Environment strategy](docs/ENVIRONMENT_STRATEGY.md).
-10. Follow [Contributing](CONTRIBUTING.md) and [Git workflow](docs/GIT_WORKFLOW.md) for every change.
-11. Review the [Risk register](docs/RISK_REGISTER.md) during weekly integration.
-12. Use [Release/demo checklist](docs/RELEASE_DEMO_CHECKLIST.md) before milestone releases.
-13. Use the [Project deck](presentations/SCENIC_2_PROJECT_DECK.md) for proposal/final work and [Group kickoff deck](presentations/SCENIC_2_GROUP_KICKOFF.md) for team alignment.
+9. Complete the [Engineering foundation](docs/ENGINEERING_FOUNDATION.md) before substantial feature development.
+10. Scaffold using [Project structure](docs/PROJECT_STRUCTURE.md), [Setup](docs/SETUP.md) and [Environment strategy](docs/ENVIRONMENT_STRATEGY.md).
+11. Follow [Contributing](CONTRIBUTING.md) and [Git workflow](docs/GIT_WORKFLOW.md) for every change.
+12. Review the [Risk register](docs/RISK_REGISTER.md) during weekly integration.
+13. Use [Release/demo checklist](docs/RELEASE_DEMO_CHECKLIST.md) before milestone releases.
+14. Use the [Project deck](presentations/SCENIC_2_PROJECT_DECK.md) for proposal/final work and [Group kickoff deck](presentations/SCENIC_2_GROUP_KICKOFF.md) for team alignment.
 
 ## Documentation map
 
@@ -72,6 +73,7 @@ See [Git workflow](docs/GIT_WORKFLOW.md) and [Group execution plan](docs/GROUP_E
 | [Requirements](docs/REQUIREMENTS.md) | Testable MVP requirements and acceptance criteria |
 | [Architecture](docs/ARCHITECTURE.md) | Services and system boundaries |
 | [Project structure](docs/PROJECT_STRUCTURE.md) | Planned monorepo folders and ownership |
+| [Engineering foundation](docs/ENGINEERING_FOUNDATION.md) | Pre-development initialization checklist, tooling, UI system, database, testing, CI and first vertical slice |
 | [Data model](docs/DATA_MODEL.md) | Entities, constraints and statistics rules |
 | [API design](docs/API.md) | Proposed contracts and error behavior |
 | [Decision engine](docs/DECISION_ENGINE.md) | Academic deterministic recommendation baseline |
