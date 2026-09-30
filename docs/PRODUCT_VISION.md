@@ -74,6 +74,20 @@ Decision features include:
 
 A good decision response is short, ranked and explainable rather than an infinite wall of posters.
 
+## Context as a first-class input
+
+A strong taste match is not automatically a strong recommendation **right now**. Scenic should separate long-term Taste Match from short-lived Context Match.
+
+Context can include available time, remaining runtime, mood, energy, commitment, company, selected streaming services, whether the user wants to continue something, current franchise goals and spoiler-safe progress.
+
+Reusable **Watch Modes** (for example Bedtime, Quick Break, Weekend, Family and With Friends) let users express recurring situations without rebuilding filters. Optional **Taste Profiles** allow personal, family and friend contexts to use different preference signals without corrupting the default profile.
+
+The decision layer should understand effective watch time. If a 169-minute movie has only 35 minutes remaining, it may be a better 40-minute recommendation than an unwatched 45-minute title.
+
+Scenic should explain **Why now?** and **Why later?**, support dynamic Smart Queue lanes (Now, Tonight, Weekend, Later, Continue, Catch-Up), and let users refine a recommendation session with controls such as Shorter, Darker, Newer, Already Started or Surprise Me.
+
+Temporary feedback such as "not tonight" or "too long" must not become a permanent dislike. See `CONTEXT_AWARE_RECOMMENDATIONS.md` for the detailed model.
+
 ## Product experience
 
 Scenic should feel dark, cinematic, premium and content-first without cloning Netflix. Avoid excessive neon, fake complexity and decorative dashboards that do not help a viewing decision.

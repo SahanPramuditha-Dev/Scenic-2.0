@@ -47,6 +47,7 @@ See [Git workflow](docs/GIT_WORKFLOW.md) and [Group execution plan](docs/GROUP_E
 2. Read [Product vision](docs/PRODUCT_VISION.md) so the team understands Scenic beyond the MVP.
 3. Review the complete [Feature matrix](docs/FEATURE_MATRIX.md).
 4. Review [UI pages and routes](docs/UI_ROUTES.md).
+   - For the product-level recommendation behavior behind Watch Next/Ask Scenic, read the [contextual recommendation specification](docs/CONTEXT_AWARE_RECOMMENDATIONS.md).
 5. Read [Group execution plan](docs/GROUP_EXECUTION_PLAN.md).
 6. Complete [Team onboarding](docs/TEAM_ONBOARDING.md) and agree ownership in [Team workflow](docs/TEAM.md).
 7. Follow [Delivery plan](PLAN.md) and [Backlog](docs/BACKLOG.md).
@@ -74,6 +75,7 @@ See [Git workflow](docs/GIT_WORKFLOW.md) and [Group execution plan](docs/GROUP_E
 | [Data model](docs/DATA_MODEL.md) | Entities, constraints and statistics rules |
 | [API design](docs/API.md) | Proposed contracts and error behavior |
 | [Decision engine](docs/DECISION_ENGINE.md) | Academic deterministic recommendation baseline |
+| [Context-aware recommendations](docs/CONTEXT_AWARE_RECOMMENDATIONS.md) | Time-aware decisions, Watch Modes, Taste Profiles, Smart Queue lanes, refinement, feedback and recommendation memory |
 | [AI system handoff](docs/AI_SYSTEM_HANDOFF.md) | Full Scenic intelligence/AI roadmap |
 | [Franchise & universe tracking](docs/FRANCHISE_UNIVERSE_TRACKING.md) | Versioned universe hierarchy, watch orders, title relations, advanced status and progress rules |
 | [Environment strategy](docs/ENVIRONMENT_STRATEGY.md) | Local/test/demo environments, data, migrations and provider behavior |

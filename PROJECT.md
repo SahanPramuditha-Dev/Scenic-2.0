@@ -49,6 +49,12 @@ The broader Scenic vision includes:
 - explainable recommendations and Scenic Match;
 - Ask Scenic conversational discovery;
 - Smart Watch Planner using time, mood, company and commitment;
+- saved Watch Modes such as Bedtime, Quick Break, Weekend, Family and With Friends;
+- contextual Taste Profiles so personal, family and friend viewing does not corrupt one preference model;
+- effective remaining-runtime awareness, so a long title with 35 minutes left can still fit a 40-minute session;
+- explainable **Why now? / Why later?** decisions and dynamic Smart Queue lanes such as Now, Tonight, Weekend and Later;
+- recommendation refinement without restarting (shorter, darker, newer, already started, surprise me, etc.);
+- recommendation memory/history and post-watch micro-feedback for better future decisions;
 - progress-aware spoiler protection and safe recaps;
 - import/export and deduplication;
 - optional small-group decision features.
@@ -92,3 +98,6 @@ A feature is complete only when implemented, reviewed, tested, integrated and do
 
 ## Tracking architecture reference
 The full franchise/universe and advanced tracking model is specified in `docs/FRANCHISE_UNIVERSE_TRACKING.md`. Provider collections are treated as metadata inputs; Scenic owns the versioned hierarchy, relations, watch-order policy and derived personal progress.
+
+## Recommendation architecture reference
+The full context-aware recommendation and decision model—including Session Context, Watch Modes, Taste Profiles, effective watch time, Smart Queue lanes, Why Now/Why Later explanations, refinement, temporary-vs-permanent feedback, recommendation memory, streaming-aware ranking, story dependencies and release-driven catch-up planning—is specified in `docs/CONTEXT_AWARE_RECOMMENDATIONS.md`.

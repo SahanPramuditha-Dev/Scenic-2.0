@@ -43,16 +43,26 @@ Legend:
 | Collections | Separate continuities | P1 | DCU/DCEU/Arrowverse-style roots remain independent unless intentionally grouped |
 | Collections | Related-media graph | P1 | Prequel, sequel, spin-off, same universe, reboot, alternate continuity, etc. |
 | Collections | Universe Hub / detail | P1 | Browse, progress, hierarchy, next item, remaining runtime, upcoming items |
-| Collections | Universe catch-up goals | P2 | Plan completion before an upcoming movie/season |
+| Collections | Universe catch-up goals | P2 | Plan completion before an upcoming movie/season using remaining runtime and release date |
+| Collections | Story dependency classification | P2 | Curated Required / Helpful / Optional prerequisites; AI must not invent canon dependencies |
 | People | Actor/director/studio completion | P2 | Depends on metadata depth |
 | Recommendations | Deterministic ranking baseline | MVP | Eligible candidate filtering + weighted scoring |
 | Recommendations | Explainable reasons | MVP | Human-readable reason codes |
 | Recommendations | Scenic Match | P1 | Personalized compatibility score with explanation |
 | Recommendations | Hidden Gems | P1 | Discovery outside obvious popularity |
 | Recommendations | Comfort-Zone Breaker | P2 | Controlled exploration |
-| Recommendations | Feedback learning | P1 | Like/dislike/not tonight/never recommend |
+| Recommendations | Feedback learning | P1 | Like/dislike/not tonight/never recommend; preserve temporary vs permanent intent |
+| Recommendations | Why Now / Why Later explanations | P1 | Explain both strong current fits and high-taste titles deferred because of session context |
+| Recommendations | Post-watch micro-feedback | P1 | Lightweight signals such as loved/good/okay/disliked plus optional strengths/weaknesses |
+| Recommendations | Recommendation memory/history | P2 | Recall prior suggestions, alternatives and accepted/deferred/dismissed outcomes |
+| Recommendations | Recommendation Sandbox / refinement | P2 | Rerank within the same session: shorter, darker, newer, more like this, something new, etc. |
 | Decision | Watch Next / Decision Engine | P1 | Short ranked result set |
 | Decision | Time/mood/company/commitment context | P1 | Context affects session, not permanent taste by default |
+| Decision | Saved Watch Modes | P1 | Reusable Bedtime, Quick Break, Weekend, Family, Friends and custom contexts |
+| Decision | Contextual Taste Profiles | P1 | Separate personal/family/friends taste signals without fragmenting the account |
+| Decision | Effective remaining-runtime awareness | P1 | Rank by remaining commitment for in-progress movies/episodes, not only full title runtime |
+| Decision | Smart Queue lanes | P1 | Dynamic Now / Tonight / Weekend / Later / Continue / Catch-Up organization |
+| Decision | Exploration control | P2 | User-controlled Familiar ↔ Surprise Me behavior |
 | Decision | Smart Watch Planner | P2 | Plans around available time and backlog |
 | AI | Ask Scenic | P2 | Conversational layer over real Scenic data |
 | AI | Entertainment Memory queries | P2 | Questions over personal history/progress |
