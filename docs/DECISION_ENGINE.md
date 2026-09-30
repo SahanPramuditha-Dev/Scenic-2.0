@@ -1,9 +1,12 @@
 # Decision engine plan
 
-> **Scope:** This file defines the deterministic recommendation baseline for the academic MVP. For the **full product AI vision**—Ask Scenic, Entertainment DNA/Memory, Scenic Match, Smart Queue, Taste Evolution, planning, semantic discovery, spoiler intelligence, availability intelligence, group recommendation and future ML—see [`AI_SYSTEM_HANDOFF.md`](AI_SYSTEM_HANDOFF.md).
+> **Scope:** This file defines the deterministic recommendation baseline for the academic MVP. For the **full product AI vision**—Ask Scenic, Entertainment DNA/Memory, Scenic Match, Smart Queue, Taste Evolution, planning, semantic discovery, spoiler intelligence, availability intelligence, group recommendation and future ML—see [`AI_SYSTEM_HANDOFF.md`](AI_SYSTEM_HANDOFF.md). For the product-level **time/context-aware decision model**—40-minute sessions, Watch Modes, Taste Profiles, remaining-runtime awareness, Why Now/Why Later, queue lanes, refinement and feedback semantics—see [`CONTEXT_AWARE_RECOMMENDATIONS.md`](CONTEXT_AWARE_RECOMMENDATIONS.md).
 
 ## MVP approach
 Start with a deterministic content-based ranking baseline. A trained ML system requires data and evaluation that the initial project may not have.
+
+## Product-layer successor
+After the MVP baseline is accepted, Scenic should add a contextual layer rather than replacing the baseline with an opaque model. Explicit available time can become a hard/strong constraint; in-progress titles use **remaining commitment** instead of full runtime; session feedback such as `NOT_TONIGHT` remains temporary; and recommendation reasons should distinguish taste fit from context fit. The canonical behavior is defined in `CONTEXT_AWARE_RECOMMENDATIONS.md`.
 
 ## Inputs
 A bounded pool of candidate metadata; aggregate genre preferences from completed titles; already-completed IDs; optional explicit genres/runtime filters. Candidate retrieval belongs to the API/provider adapter.
