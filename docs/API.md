@@ -55,3 +55,25 @@ POST /recommend with schemaVersion, candidate title metadata, aggregate genre pr
 Return schemaVersion, algorithmVersion and items containing titleId, score and reasonCodes.
 Do not pass names, email addresses, session tokens or password hashes.
 Define request/response schemas and contract tests before parallel implementation; publish an OpenAPI specification when scaffolding begins.
+
+## Context-aware decision extensions
+
+These are **P1/P2 proposed contracts**, not academic-MVP commitments. Final request/response schemas must be agreed before implementation.
+
+| Method | Route | Purpose |
+|---|---|---|
+| GET | /me/watch-modes | List reusable decision contexts |
+| POST | /me/watch-modes | Create a custom Watch Mode |
+| PATCH | /me/watch-modes/:id | Update a Watch Mode |
+| DELETE | /me/watch-modes/:id | Delete a custom Watch Mode |
+| GET | /me/taste-profiles | List contextual taste profiles |
+| POST | /me/taste-profiles | Create family/friends/custom profile |
+| PATCH | /me/taste-profiles/:id | Correct/update contextual profile settings |
+| POST | /me/decisions | Create a recommendation session from explicit context |
+| POST | /me/decisions/:sessionId/refine | Rerank the existing session with changes such as shorter/darker/newer/something-new |
+| POST | /me/decisions/:sessionId/feedback | Record temporary or long-term recommendation feedback with explicit semantics |
+| GET | /me/decisions/history | Recall prior recommendation sessions/results |
+| GET | /me/smart-queue | Return explainable Now/Tonight/Weekend/Later/Continue/Catch-Up lanes |
+| POST | /me/collections/:id/catch-up-plan | Build a progress-aware plan toward a target release/date |
+
+Decision requests should distinguish persistent preferences from `sessionContext`. When time is specified, ranking should use **effective remaining watch time** for in-progress content where progress/runtime data is reliable. Recommendation results should return machine-readable reason codes/score components so the UI can explain taste fit, context fit, runtime fit and deferral. See `CONTEXT_AWARE_RECOMMENDATIONS.md`.
